@@ -1,10 +1,35 @@
 .cardContent {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  min-width: 204px;
+  max-width: 400px;
 }
 
 .heroData {
   display: flex;
+  justify-content: space-between;
+  padding: 1rem 0rem;
   gap: 16px;
+}
+
+.imageWrapper {
+  width: 100%;
+  display: flex;
+  min-height: 200px;
+  max-height: 394px;
+  border-bottom: 2px solid #e92429;
+}
+
+.image {
+  width: 99%;
+  display: flex;
+  min-height: 200px;
+  max-height: 394px;
+  background-color: blueviolet;
+}
+
+.heroName {
+  color: #404040;
+  font-weight: bold;
+  font-size: 16px;
 }
