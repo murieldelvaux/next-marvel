@@ -1,7 +1,7 @@
 .searchList {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 40px;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -9,9 +9,34 @@
 
 .list {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   flex-wrap: wrap;
+  gap: 24px;
+}
+
+.listContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
   gap: 16px;
+}
+
+.headerList {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.heroAmount {
+  color: #b9b9b9;
+  font-weight: bold;
+}
+
+.filters {
+  display: flex;
 }
