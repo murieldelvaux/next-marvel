@@ -1,0 +1,22 @@
+.pagination {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.input {
+  border: 1px solid #404040;
+  border-radius: 2px;
+  outline: none;
+  text-align: center;
+  width: 48px;
+}
+
+.button {
+  background-color: #e92429;
+  border: none;
+  border-radius: 2px;
+  font-weight: bold;
+  cursor: pointer;
+}

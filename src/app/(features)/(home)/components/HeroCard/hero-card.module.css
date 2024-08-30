@@ -1,8 +1,14 @@
 .cardContent {
   display: flex;
   flex-direction: column;
-  min-width: 204px;
-  max-width: 400px;
+  width: 204px;
+  border-radius: 4px;
+}
+
+.cardContent:hover {
+  -webkit-box-shadow: 4px 4px 5px 0px rgba(217, 217, 217, 1);
+  -moz-box-shadow: 4px 4px 5px 0px rgba(217, 217, 217, 1);
+  box-shadow: 4px 4px 5px 0px rgba(217, 217, 217, 1);
 }
 
 .heroData {
@@ -23,8 +29,11 @@
 .image {
   width: 99%;
   display: flex;
-  min-height: 200px;
-  max-height: 394px;
+  min-height: 180px;
+  max-height: 294px;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
   background-color: blueviolet;
 }
 

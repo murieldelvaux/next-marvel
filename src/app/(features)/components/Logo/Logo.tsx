@@ -17,9 +17,9 @@ export const Logo = ({ size }: LogoProps) => {
           <g
             id="Page-1"
             stroke="none"
-            stroke-width="1"
+            strokeWidth="1"
             fill="none"
-            fill-rule="evenodd"
+            fillRule="evenodd"
           >
             <g id="Guide" transform="translate(-78.000000, -313.000000)">
               <g id="logo_menor" transform="translate(78.000000, 313.000000)">
@@ -60,9 +60,9 @@ export const Logo = ({ size }: LogoProps) => {
           <g
             id="Page-1"
             stroke="none"
-            stroke-width="1"
+            strokeWidth="1"
             fill="none"
-            fill-rule="evenodd"
+            fillRule="evenodd"
           >
             <g id="Guide" transform="translate(-65.000000, -161.000000)">
               <g id="logo" transform="translate(65.000000, 161.000000)">
