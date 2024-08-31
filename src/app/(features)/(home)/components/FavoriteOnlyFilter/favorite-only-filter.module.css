@@ -1,0 +1,9 @@
+.favoriteFilterContainer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  color: #fa7c7c;
+  font-weight: bold;
+  font-size: 14px;
+}

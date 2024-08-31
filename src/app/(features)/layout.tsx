@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { TanstackQueryProvider } from "@/app/providers/react-query/QueryClientProvider";
 import "@/app/global.css";
-import { Footer } from "@/app/(features)/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Marvel - Search heros",
@@ -17,10 +16,7 @@ export default function RootLayout({
     <html lang="pt-br" suppressHydrationWarning>
       <body>
         <TanstackQueryProvider>
-          <div className="layoutProvider">
-            <div>{children}</div>
-            <Footer />
-          </div>
+          <div>{children}</div>
         </TanstackQueryProvider>
       </body>
     </html>

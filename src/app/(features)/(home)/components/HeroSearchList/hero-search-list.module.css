@@ -39,4 +39,5 @@
 
 .filters {
   display: flex;
+  gap: 16px;
 }

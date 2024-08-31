@@ -5,5 +5,13 @@
   align-items: center;
   background-color: #fff;
   gap: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 30px;
+  gap: 40px;
 }

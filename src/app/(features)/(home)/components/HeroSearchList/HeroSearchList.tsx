@@ -8,6 +8,9 @@ import { usePaginationStore } from "@/app/(features)/stores/usePaginationStore";
 import { useFindByNameStore } from "@/app/(features)/stores/useFindByNameStore";
 import { Loading } from "@/app/(features)/components/Loading/Loading";
 import { NotFoundResult } from "@/app/(features)/components/NotFound/NotFoundResult";
+import { OrderByNameSwitchFilter } from "@/app/(features)/(home)/components/OrderByNameSwitchFilter/OrderByNameSwitchFilter";
+import { FavoriteOnlyFilter } from "@/app/(features)/(home)/components/FavoriteOnlyFilter/FavoriteOnlyFilter";
+import { ErrorFeedback } from "@/app/(features)/components/ErrorFeedback/ErrorFeedback";
 
 export const HeroSearchList = () => {
   const { offset } = usePaginationStore();
@@ -21,7 +24,6 @@ export const HeroSearchList = () => {
     offset,
     name,
   });
-  console.log(name, isPendingHeros, isError, heros?.data.results);
   return (
     <div className={styles.searchList}>
       <Search variant="allRed" />
@@ -33,8 +35,8 @@ export const HeroSearchList = () => {
           >{`Encontrados ${heros?.data.total ?? 0} heróis`}</p>
 
           <div className={styles.filters}>
-            <div>filtro 1</div>
-            <div>filtro 2</div>
+            <OrderByNameSwitchFilter />
+            <FavoriteOnlyFilter />
           </div>
         </div>
 
@@ -55,6 +57,8 @@ export const HeroSearchList = () => {
         {heros?.data.results && heros?.data.results.length === 0 && (
           <NotFoundResult />
         )}
+
+        {isError && <ErrorFeedback />}
 
         <Pagination
           limit={heros?.data.limit ?? 15}

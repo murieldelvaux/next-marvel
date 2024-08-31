@@ -30,11 +30,7 @@ export const marvelServiceFetch = async <TData = unknown>(
     `${env.NEXT_MARVEL_API_URL}${path}&ts=${ts}&apikey=${env.NEXT_PUBLIC_KEY_MARVEL}&hash=${hash}`,
     defaultInit
   );
-  console.log(
-    res,
-    ts,
-    `${env.NEXT_MARVEL_API_URL}${path}&ts=${ts}&apikey=${env.NEXT_PUBLIC_KEY_MARVEL}&hash=${hash}`
-  );
+
   const text = await res.text();
 
   if (!res.ok) {

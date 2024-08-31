@@ -6,7 +6,7 @@ import { usePaginationStore } from "@/app/(features)/stores/usePaginationStore";
 export const Pagination = ({ limit, currentPage, total }: PaginationProps) => {
   const { setOffset, offset } = usePaginationStore();
   const totalPages = Math.floor(total / limit);
-  console.log(totalPages);
+
   return (
     <div className={styles.pagination}>
       <button

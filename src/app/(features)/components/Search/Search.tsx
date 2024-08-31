@@ -1,5 +1,5 @@
 import styles from "@/app/(features)/components/Search/search.module.css";
-import { SearchIcon } from "@/app/(features)/components/SearchIcon/SearchIcon";
+import { SearchIcon } from "@/app/(features)/icons/SearchIcon/SearchIcon";
 import { SearchProps } from "./Search.types";
 import { useFindByNameStore } from "@/app/(features)/stores/useFindByNameStore";
 
