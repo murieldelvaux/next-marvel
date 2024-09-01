@@ -9,11 +9,13 @@ export const findAllHerosPaginated = async ({
   limit,
   offset,
   name,
+  orderBy,
 }: FindAllHerosPaginatedProps = {}) => {
   const queryParameters = new URLSearchParams({
     ...(limit && { limit: String(limit) }),
     ...(offset && { offset: String(offset) }),
-    ...(name && { name: name }),
+    ...(name && { nameStartsWith: name }),
+    ...(orderBy && { orderBy }),
   });
 
   const heros = await marvelServiceFetch<FindAllHerosPaginatedResponse>(

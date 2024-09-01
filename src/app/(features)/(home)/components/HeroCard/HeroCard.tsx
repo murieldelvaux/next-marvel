@@ -3,9 +3,9 @@ import { HeroCardProps } from "@/app/(features)/(home)/components/HeroCard/HeroC
 import { Favorite } from "@/app/(features)/components/Favorite/Favorite";
 import Image from "next/image";
 
-export const HeroCard = ({ name, image }: HeroCardProps) => {
+export const HeroCard = ({ name, image, onClick }: HeroCardProps) => {
   return (
-    <div className={styles.cardContent}>
+    <div className={styles.cardContent} onClick={onClick}>
       <div className={styles.imageWrapper}>
         <div className={styles.image}>
           {image && (

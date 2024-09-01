@@ -1,8 +1,9 @@
 "use client";
+
 import { HeroCard } from "@/app/(features)/(home)/components/HeroCard/HeroCard";
 import styles from "@/app/(features)/(home)/components/HeroSearchList/hero-search-list.module.css";
 import { Search } from "@/app/(features)/components/Search/Search";
-import { useFindAllHeros } from "@/app/(features)/(home)/react-queries/useFindAllHeros";
+import { useFindAllHerosPaginated } from "@/app/(features)/(home)/react-queries/useFindAllHerosPaginated";
 import { Pagination } from "@/app/(features)/components/Pagination/Pagination";
 import { usePaginationStore } from "@/app/(features)/stores/usePaginationStore";
 import { useFindByNameStore } from "@/app/(features)/stores/useFindByNameStore";
@@ -11,19 +12,25 @@ import { NotFoundResult } from "@/app/(features)/components/NotFound/NotFoundRes
 import { OrderByNameSwitchFilter } from "@/app/(features)/(home)/components/OrderByNameSwitchFilter/OrderByNameSwitchFilter";
 import { FavoriteOnlyFilter } from "@/app/(features)/(home)/components/FavoriteOnlyFilter/FavoriteOnlyFilter";
 import { ErrorFeedback } from "@/app/(features)/components/ErrorFeedback/ErrorFeedback";
+import { useRouter } from "next/navigation";
+import { useFiltersListStore } from "@/app/(features)/stores/useFiltersListStore";
 
 export const HeroSearchList = () => {
   const { offset } = usePaginationStore();
   const { name } = useFindByNameStore();
+  const { orderByName } = useFiltersListStore();
   const {
     data: heros,
     isPending: isPendingHeros,
     isError,
-  } = useFindAllHeros({
+  } = useFindAllHerosPaginated({
     limit: 16,
     offset,
     name,
+    orderBy: orderByName ? "name" : "-name",
   });
+  const router = useRouter();
+
   return (
     <div className={styles.searchList}>
       <Search variant="allRed" />
@@ -48,6 +55,11 @@ export const HeroSearchList = () => {
                 name={hero.name}
                 image={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
                 key={hero.id}
+                onClick={() => {
+                  const encryptHero = btoa(String(hero.id));
+                  console.log(encryptHero);
+                  router.push(`/${encryptHero}`);
+                }}
               />
             ))}
         </div>

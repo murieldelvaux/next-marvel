@@ -1,0 +1,72 @@
+.detailContainer {
+  display: flex;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 50%;
+  border: 1px solid red;
+}
+
+.heroNameSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.heroName {
+  color: #404040;
+}
+
+.heroDescription {
+  color: #8c8c8c;
+  font-weight: bold;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+}
+
+.summaryTitle {
+  color: #4c4c4c;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.summaryData {
+  color: #404040;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.summaryLastComicDate {
+  color: #4c4c4c;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.imageBackground {
+  width: 100%;
+  display: flex;
+  min-height: 180px;
+  max-height: 294px;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+}

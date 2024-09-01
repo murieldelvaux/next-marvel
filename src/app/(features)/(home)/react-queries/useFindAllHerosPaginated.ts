@@ -9,18 +9,22 @@ type UseFindAllHerosOptions<TData = FindAllHerosPaginatedResponse> = {
   offset?: number;
   limit?: number;
   name?: string;
+  orderBy?: "name" | "-name";
   options?: QueryFnOptions<FindAllHerosPaginatedResponse | null, TData>;
 };
 
-export const useFindAllHeros = <TData = FindAllHerosPaginatedResponse | null>({
+export const useFindAllHerosPaginated = <
+  TData = FindAllHerosPaginatedResponse | null,
+>({
   limit,
   offset,
   name,
+  orderBy,
   options = {},
 }: UseFindAllHerosOptions<TData> = {}) => {
   return useQuery({
     ...options,
-    queryKey: [findAllHerosQueryKey, limit, offset, name],
-    queryFn: () => findAllHerosPaginated({ limit, offset, name }),
+    queryKey: [findAllHerosQueryKey, limit, offset, name, orderBy],
+    queryFn: () => findAllHerosPaginated({ limit, offset, name, orderBy }),
   });
 };

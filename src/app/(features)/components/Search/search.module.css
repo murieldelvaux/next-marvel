@@ -5,7 +5,7 @@
   gap: 32px;
   align-items: center;
   background-color: #fcfefc;
-  width: 60%;
+  width: 50%;
   height: 48px;
   border-radius: 24px;
 }
@@ -30,11 +30,16 @@
   height: 80%;
   color: #8c8c8c;
   font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .inputRed::placeholder {
   color: #fa7e7e;
   font-weight: bold;
+  width: 100%;
+  text-overflow: ellipsis;
 }
 
 .input {
@@ -45,6 +50,9 @@
   height: 80%;
   color: #fa7e7e;
   font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .input::placeholder {

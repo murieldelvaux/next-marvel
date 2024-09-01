@@ -1,0 +1,5 @@
+.profileHeader {
+  display: flex;
+  gap: 56px;
+  flex-wrap: wrap;
+}

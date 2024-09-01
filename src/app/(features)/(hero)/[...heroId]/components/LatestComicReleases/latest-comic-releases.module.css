@@ -1,0 +1,44 @@
+.comicLastRelease {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.title {
+  color: #404040;
+  font-size: 24px;
+}
+
+.comicListContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.comicCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 160px;
+  height: 280px;
+  border-radius: 4px;
+}
+
+.comicImage {
+  width: 100%;
+  display: flex;
+  min-height: 180px;
+  max-height: 294px;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.comicTitle {
+  color: #404040;
+  font-weight: bold;
+}
