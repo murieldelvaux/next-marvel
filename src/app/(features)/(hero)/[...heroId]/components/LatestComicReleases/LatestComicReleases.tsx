@@ -9,7 +9,7 @@ export const LatestComicReleases = ({ comics }: LatestComicReleaseProps) => {
       <h1 className={styles.title}> Ultimos Lançamentos</h1>
 
       <div className={styles.comicListContainer}>
-        {comics?.map((comic) => (
+        {comics?.results.map((comic) => (
           <div className={styles.comicCard} key={comic.id}>
             <div className={styles.comicImage}>
               <Image
@@ -23,6 +23,11 @@ export const LatestComicReleases = ({ comics }: LatestComicReleaseProps) => {
             <p className={styles.comicTitle}>{comic.title}</p>
           </div>
         ))}
+        {comics?.results.length === 0 && (
+          <p className={styles.comicTitle}>
+            Opssss, não encontramos nenhum quadrinho!
+          </p>
+        )}
       </div>
     </div>
   );

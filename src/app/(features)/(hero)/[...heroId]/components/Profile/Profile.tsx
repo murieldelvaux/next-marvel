@@ -8,17 +8,19 @@ import { HeroDetail } from "@/app/(features)/(hero)/[...heroId]/components/HeroD
 import { LatestComicReleases } from "@/app/(features)/(hero)/[...heroId]/components/LatestComicReleases/LatestComicReleases";
 
 export const HeroProfile = () => {
-  const { profile, comics, lastComicDate } = useHeroProfile();
+  const { profile, comics, lastComicDate, getRating } = useHeroProfile();
 
   return (
     <div className={styles.profileContainer}>
       <ProfileHeader />
+
       <HeroDetail
         profile={profile?.data.results[0]}
-        lastComic={lastComicDate()}
+        lastComic={comics?.data && comics.data.total > 0 ? lastComicDate() : "Não há quadrinhos"}
+        rating={getRating()}
       />
 
-      <LatestComicReleases comics={comics?.data.results} />
+      <LatestComicReleases comics={comics?.data} />
     </div>
   );
 };

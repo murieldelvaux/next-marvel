@@ -14,9 +14,7 @@ export default function Layout({
         justifyContent: "space-between",
       }}
     >
-      <div>
-        <main>{children}</main>
-      </div>
+      {children}
       <Footer />
     </div>
   );

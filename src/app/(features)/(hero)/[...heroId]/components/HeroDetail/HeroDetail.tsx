@@ -1,13 +1,19 @@
 import styles from "@/app/(features)/(hero)/[...heroId]/components/HeroDetail/hero-detail.module.css";
 import { HeroDetailProps } from "@/app/(features)/(hero)/[...heroId]/components/HeroDetail/HeroDetail.types";
+import { Rating } from "@/app/(features)/(hero)/[...heroId]/components/Rating/Rating";
 import { Favorite } from "@/app/(features)/components/Favorite/Favorite";
 import { ComicsIcon } from "@/app/(features)/icons/ComicsIcon/ComicsIcon";
 import Image from "next/image";
 import "react";
 
 export const HeroDetail = ({ profile, lastComic, rating }: HeroDetailProps) => {
+  console.log(rating);
   return (
     <div className={styles.detailContainer}>
+      <div className={styles.heroNameBackground}>
+        {profile?.name.split(" ")[0].split("/")[0]}
+      </div>
+
       <div className={styles.detail}>
         <div className={styles.heroNameSection}>
           <h1 className={styles.heroName}>{profile?.name}</h1>
@@ -45,7 +51,11 @@ export const HeroDetail = ({ profile, lastComic, rating }: HeroDetailProps) => {
 
           <div className={styles.row}>
             <p className={styles.summaryTitle}>Rating:</p>
-            <p>1234</p>
+            <div className={styles.rating}>
+              {Array.from({ length: 5 }, (_, i) =>
+                rating > i ? <Rating status="on" /> : <Rating status="off" />
+              )}
+            </div>
           </div>
 
           <div className={styles.row}>
@@ -59,9 +69,11 @@ export const HeroDetail = ({ profile, lastComic, rating }: HeroDetailProps) => {
         <div className={styles.imageBackground}>
           <Image
             src={`${profile?.thumbnail.path}.${profile?.thumbnail.extension}`}
-            fill
+            width={400}
+            height={400}
             alt={profile?.name ?? ""}
             priority
+            sizes="(min-width: 200px)"
           />
         </div>
       )}

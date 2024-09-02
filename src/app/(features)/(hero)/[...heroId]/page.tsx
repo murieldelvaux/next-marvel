@@ -6,7 +6,6 @@ export default function Hero() {
       style={{
         display: "flex",
         width: "100%",
-        overflow: "hidden",
         backgroundColor: "#E7F6E7",
       }}
     >
