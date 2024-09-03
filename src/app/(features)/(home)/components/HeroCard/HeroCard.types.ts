@@ -1,4 +1,7 @@
+import { HerosResults } from "@/app/(features)/(home)/types/findAllHerosPaginated.types";
+
 export type HeroCardProps = {
-  name: string;
   image?: string;
+  href?: string;
+  hero?: HerosResults;
 };

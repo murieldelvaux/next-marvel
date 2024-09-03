@@ -5,7 +5,7 @@ import { HeroSearchList } from "@/app/(features)/(home)/components/HeroSearchLis
 
 export default function Home() {
   return (
-    <div className={styles.main}>
+    <div className={styles.content}>
       <Logo size="large" />
       <HomeHeader />
       <HeroSearchList />

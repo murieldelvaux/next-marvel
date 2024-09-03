@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   background-color: #ff1510;
-  height: 130px;
+  height: 140px;
   width: 100%;
+  border: 1px solid red;
 }

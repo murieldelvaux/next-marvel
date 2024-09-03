@@ -1,8 +1,18 @@
+"use client";
 import { LogoProps } from "@/app/(features)/components/Logo/Logo.types";
+import Link from "next/link";
 
-export const Logo = ({ size }: LogoProps) => {
+export const Logo = ({ size, onClick }: LogoProps) => {
   return (
-    <>
+    <Link
+      style={{ cursor: "pointer" }}
+      href="/"
+      onClick={() => {
+        if (size === "small" && onClick) {
+          onClick();
+        }
+      }}
+    >
       {size === "small" && (
         <svg
           width="215px"
@@ -17,9 +27,9 @@ export const Logo = ({ size }: LogoProps) => {
           <g
             id="Page-1"
             stroke="none"
-            stroke-width="1"
+            strokeWidth="1"
             fill="none"
-            fill-rule="evenodd"
+            fillRule="evenodd"
           >
             <g id="Guide" transform="translate(-78.000000, -313.000000)">
               <g id="logo_menor" transform="translate(78.000000, 313.000000)">
@@ -60,9 +70,9 @@ export const Logo = ({ size }: LogoProps) => {
           <g
             id="Page-1"
             stroke="none"
-            stroke-width="1"
+            strokeWidth="1"
             fill="none"
-            fill-rule="evenodd"
+            fillRule="evenodd"
           >
             <g id="Guide" transform="translate(-65.000000, -161.000000)">
               <g id="logo" transform="translate(65.000000, 161.000000)">
@@ -89,6 +99,6 @@ export const Logo = ({ size }: LogoProps) => {
           </g>
         </svg>
       )}
-    </>
+    </Link>
   );
 };
