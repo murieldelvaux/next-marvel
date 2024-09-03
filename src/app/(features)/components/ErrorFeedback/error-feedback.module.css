@@ -5,10 +5,46 @@
   align-items: center;
   gap: 24px;
   width: 100%;
+  margin-bottom: 24px;
 }
 
 .text {
   color: #404040;
   font-size: 40px;
   font-weight: bold;
+}
+
+.imageContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  min-height: 200px;
+  height: 420px;
+}
+
+.imageContent {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  filter: brightness(57%) contrast(99%);
+  object-fit: cover;
+  object-position: center;
+  min-width: 200px;
+  width: 590px;
+  height: 420px;
+  min-height: 200px;
+}
+
+@media (max-width: 900px) {
+  .imageContent {
+    width: 100%;
+  }
+
+  .image {
+    width: 100%;
+  }
 }

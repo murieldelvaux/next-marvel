@@ -5,10 +5,52 @@
   align-items: center;
   gap: 24px;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 .text {
   color: #404040;
   font-size: 40px;
   font-weight: bold;
+}
+
+.imageContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  min-height: 200px;
+  height: 400px;
+}
+
+.imageContent {
+  position: relative;
+  width: 70%;
+}
+
+.image {
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  filter: brightness(57%) contrast(99%);
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 1000px) {
+  .imageContainer {
+    height: 300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .imageContainer {
+    height: 200px;
+  }
+
+  .imageContent {
+    width: 100%;
+  }
+
+  .image {
+    width: 100%;
+  }
 }

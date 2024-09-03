@@ -3,7 +3,6 @@
   width: 100%;
   margin-top: 48px;
   margin-bottom: 48px;
-  border: 1px solid red;
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
@@ -28,13 +27,14 @@
 
 .heroNameBackground {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 20%;
-  font-size: 18rem;
+  font-size: 22rem;
+  line-height: 22rem;
   font-weight: bold;
-  color: rgba(255, 255, 255, 0.834);
+  color: rgba(255, 255, 255, 0.426);
   z-index: 0;
-  max-width: 60%;
+  max-width: 72%;
   word-wrap: break-word;
   white-space: normal;
   overflow-wrap: break-word;
@@ -59,7 +59,6 @@
 .row {
   display: flex;
   align-items: center;
-
   gap: 16px;
 }
 
@@ -81,15 +80,22 @@
   font-size: 14px;
 }
 
-.imageBackground {
+.imageContainer {
   position: relative;
   min-width: 200px;
+  min-height: 200px;
   width: 400px;
+  height: 400px;
+  object-fit: cover;
   display: flex;
-  height: auto;
   overflow: hidden;
-  object-fit: contain;
+  box-shadow: 0px 0px 27px 12px #b4e2b0;
+}
+
+.image {
   border-radius: 4px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .rating {

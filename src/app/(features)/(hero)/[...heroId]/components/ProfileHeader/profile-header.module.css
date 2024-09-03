@@ -1,5 +1,6 @@
 .profileHeader {
   display: flex;
-  gap: 56px;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 56px;
 }

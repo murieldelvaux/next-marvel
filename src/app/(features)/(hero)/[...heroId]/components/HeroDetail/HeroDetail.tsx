@@ -11,7 +11,7 @@ export const HeroDetail = ({ profile, lastComic, rating }: HeroDetailProps) => {
   return (
     <div className={styles.detailContainer}>
       <div className={styles.heroNameBackground}>
-        {profile?.name.split(" ")[0].split("/")[0]}
+        {profile?.name.split(" ")[0].split("/")[0].replace("-", " ")}
       </div>
 
       <div className={styles.detail}>
@@ -66,14 +66,14 @@ export const HeroDetail = ({ profile, lastComic, rating }: HeroDetailProps) => {
       </div>
 
       {profile?.thumbnail && (
-        <div className={styles.imageBackground}>
+        <div className={styles.imageContainer}>
           <Image
             src={`${profile?.thumbnail.path}.${profile?.thumbnail.extension}`}
-            width={400}
-            height={400}
+            fill
             alt={profile?.name ?? ""}
             priority
             sizes="(min-width: 200px)"
+            className={styles.image}
           />
         </div>
       )}

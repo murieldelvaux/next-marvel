@@ -1,8 +1,8 @@
 import { LogoProps } from "@/app/(features)/components/Logo/Logo.types";
 
-export const Logo = ({ size }: LogoProps) => {
+export const Logo = ({ size, onClick }: LogoProps) => {
   return (
-    <>
+    <div style={{ cursor: "pointer" }} onClick={onClick}>
       {size === "small" && (
         <svg
           width="215px"
@@ -89,6 +89,6 @@ export const Logo = ({ size }: LogoProps) => {
           </g>
         </svg>
       )}
-    </>
+    </div>
   );
 };

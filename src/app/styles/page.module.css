@@ -1,18 +1,9 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  align-items: center;
-  background-color: #fff;
-  gap: 40px;
-}
-
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 30px;
+  width: 100%;
   gap: 40px;
 }

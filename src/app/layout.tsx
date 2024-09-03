@@ -17,7 +17,16 @@ export default function RootLayout({
     <html lang="pt-br" suppressHydrationWarning>
       <body>
         <TanstackQueryProvider>
-          <div>{children}</div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              height: "100vh",
+            }}
+          >
+            {children}
+          </div>
         </TanstackQueryProvider>
       </body>
     </html>

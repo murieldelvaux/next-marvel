@@ -4,6 +4,7 @@
   gap: 16px;
   margin-bottom: 48px;
   width: 100%;
+  z-index: 1;
 }
 
 .title {

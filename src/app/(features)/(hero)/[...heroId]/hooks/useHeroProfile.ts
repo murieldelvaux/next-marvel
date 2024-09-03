@@ -1,10 +1,11 @@
 import { useFindHeroComics } from "@/app/(features)/(hero)/[...heroId]/react-queries/useFindHeroComics";
 import { useFindHeroProfile } from "@/app/(features)/(hero)/[...heroId]/react-queries/useFindHeroProfile";
 import { formatDate } from "@/app/utils/formatDate";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 
 export const useHeroProfile = () => {
+  const router = useRouter();
   const param = useParams();
   const id = decodeURIComponent(param.heroId[0]);
   const decryptId = atob(id);
@@ -57,6 +58,7 @@ export const useHeroProfile = () => {
     decryptId,
     profile,
     comics,
+    router,
     lastComicDate,
     getRating,
   };
