@@ -1,11 +1,26 @@
 "use client";
 import styles from "@/app/(features)/components/Favorite/favorite.module.css";
+import { FavoriteProps } from "@/app/(features)/components/Favorite/Favorite.types";
+import { useFavoriteHero } from "@/app/(features)/hooks/useFavoriteHero";
 import { useState } from "react";
 
-export const Favorite = () => {
-  const [favorite, setFavorite] = useState(false);
+export const Favorite = ({ hero }: FavoriteProps) => {
+  const {
+    favorite,
+    favoriteHerosList,
+    setFavorite,
+    handleUpdateFavoriteList,
+  } = useFavoriteHero();
+
   return (
-    <button className={styles.favorite} onClick={() => setFavorite(!favorite)}>
+    <button
+      className={styles.favorite}
+      onClick={() => {
+        if (hero) handleUpdateFavoriteList(hero);
+
+        console.log("favorite ->", favoriteHerosList);
+      }}
+    >
       <svg
         width="20px"
         height="20px"

@@ -2,11 +2,12 @@ import styles from "@/app/(features)/(home)/components/HeroCard/hero-card.module
 import { HeroCardProps } from "@/app/(features)/(home)/components/HeroCard/HeroCard.types";
 import { Favorite } from "@/app/(features)/components/Favorite/Favorite";
 import Image from "next/image";
+import Link from "next/link";
 
-export const HeroCard = ({ name, image, onClick }: HeroCardProps) => {
+export const HeroCard = ({ image, href, hero }: HeroCardProps) => {
   return (
-    <div className={styles.cardContent} onClick={onClick}>
-      <div className={styles.imageWrapper}>
+    <div className={styles.cardContent}>
+      <Link className={styles.imageWrapper} href={href ?? ""}>
         <div className={styles.image}>
           {image && (
             <Image
@@ -19,10 +20,13 @@ export const HeroCard = ({ name, image, onClick }: HeroCardProps) => {
             />
           )}
         </div>
-      </div>
+      </Link>
+
       <div className={styles.heroData}>
-        <p className={styles.heroName}>{name}</p>
-        <Favorite />
+        <Link className={styles.heroNameContent} href={href ?? ""}>
+          <p className={styles.heroName}>{hero?.name}</p>
+        </Link>
+        <Favorite hero={hero} />
       </div>
     </div>
   );

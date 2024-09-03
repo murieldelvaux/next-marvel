@@ -3,10 +3,10 @@
 import React from "react";
 import styles from "@/app/(features)/(home)/components/OrderByNameSwitchFilter/order-by-name-switch-filter.module.css";
 import { HeroIcon } from "@/app/(features)/icons/HeroIcon/HeroIcon";
-import { useFiltersListStore } from "@/app/(features)/stores/useFiltersListStore";
+import { useFiltersListHerosStore } from "@/app/(features)/stores/useFiltersListStore";
 
 export const OrderByNameSwitchFilter = () => {
-  const { setOrderByName } = useFiltersListStore();
+  const { setOrderByName, orderByName } = useFiltersListHerosStore();
 
   return (
     <div className={styles.switchGroup}>
@@ -16,6 +16,7 @@ export const OrderByNameSwitchFilter = () => {
       <label className={styles.switch}>
         <input
           type="checkbox"
+          checked={orderByName}
           onChange={(e) => setOrderByName(e.target.checked)}
         />
         <span className={styles.slider}></span>

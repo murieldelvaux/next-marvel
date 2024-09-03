@@ -7,6 +7,7 @@ export default function Hero() {
         display: "flex",
         width: "100%",
         backgroundColor: "#E7F6E7",
+        flexDirection: "column",
       }}
     >
       <HeroProfile />

@@ -12,8 +12,10 @@ export const useHeroProfile = () => {
   const totalComics = 61309;
   const totalSeries = 15084;
 
-  const { data: profile } = useFindHeroProfile({ heroId: Number(decryptId) });
-  const { data: comics } = useFindHeroComics({
+  const { data: profile, isPending: isPendingHero } = useFindHeroProfile({
+    heroId: Number(decryptId),
+  });
+  const { data: comics, isPending: isPendingComics } = useFindHeroComics({
     heroId: Number(decryptId),
   });
 
@@ -45,14 +47,11 @@ export const useHeroProfile = () => {
       comics?.data.results[0].dates.filter(
         (date) => date.type === "onsaleDate"
       )[0].date ?? "";
-    console.log("lastComic --->", lastComic);
+
     const date = formatDate(lastComic);
-    console.log("date --->", date);
 
     return date;
   }, [comics]);
-
-  console.log(profile, "comics --> ", comics);
 
   return {
     decryptId,
@@ -61,5 +60,6 @@ export const useHeroProfile = () => {
     router,
     lastComicDate,
     getRating,
+    isPendingHero,
   };
 };
