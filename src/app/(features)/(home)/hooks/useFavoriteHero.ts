@@ -20,6 +20,10 @@ export const useFavoriteHero = () => {
 
     if (favoriteHerosList.length < 5 && !heroAlreadyIsFavorite) {
       favoriteList.push(newHero);
+      localStorage.setItem(
+        "favoriteHeroList",
+        JSON.stringify(favoriteHerosList)
+      );
 
       setFavoriteHerosList([...favoriteList]);
     }
@@ -29,6 +33,11 @@ export const useFavoriteHero = () => {
         (hero) => hero.id === newHero.id
       );
       favoriteList.splice(unfavoritedHeroIndex, 1);
+      localStorage.setItem(
+        "favoriteHeroList",
+        JSON.stringify(favoriteHerosList)
+      );
+
       setFavoriteHerosList([...favoriteList]);
     }
   };

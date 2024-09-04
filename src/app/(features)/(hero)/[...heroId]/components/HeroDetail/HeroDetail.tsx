@@ -66,9 +66,9 @@ export const HeroDetail = ({ profile, lastComic, rating }: HeroDetailProps) => {
                 <div className={styles.rating}>
                   {Array.from({ length: 5 }, (_, i) =>
                     rating > i ? (
-                      <Rating status="on" />
+                      <Rating status="on" key={i} />
                     ) : (
-                      <Rating status="off" />
+                      <Rating status="off" key={i} />
                     )
                   )}
                 </div>

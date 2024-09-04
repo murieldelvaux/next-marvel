@@ -1,7 +1,7 @@
 "use client";
 import styles from "@/app/(features)/components/Favorite/favorite.module.css";
 import { FavoriteProps } from "@/app/(features)/components/Favorite/Favorite.types";
-import { useFavoriteHero } from "@/app/(features)/hooks/useFavoriteHero";
+import { useFavoriteHero } from "@/app/(features)/(home)/hooks/useFavoriteHero";
 
 export const Favorite = ({ hero, variant, isFavorite }: FavoriteProps) => {
   const { handleClickToSelectAction, showOnlyFavorites } = useFavoriteHero();
