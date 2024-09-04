@@ -2,23 +2,16 @@
 import styles from "@/app/(features)/components/Favorite/favorite.module.css";
 import { FavoriteProps } from "@/app/(features)/components/Favorite/Favorite.types";
 import { useFavoriteHero } from "@/app/(features)/hooks/useFavoriteHero";
-import { useState } from "react";
 
-export const Favorite = ({ hero }: FavoriteProps) => {
-  const {
-    favorite,
-    favoriteHerosList,
-    setFavorite,
-    handleUpdateFavoriteList,
-  } = useFavoriteHero();
+export const Favorite = ({ hero, variant, isFavorite }: FavoriteProps) => {
+  const { handleClickToSelectAction, showOnlyFavorites } = useFavoriteHero();
 
   return (
     <button
       className={styles.favorite}
+      id={`${hero?.id}`}
       onClick={() => {
-        if (hero) handleUpdateFavoriteList(hero);
-
-        console.log("favorite ->", favoriteHerosList);
+        handleClickToSelectAction({ hero, variant });
       }}
     >
       <svg
@@ -42,8 +35,8 @@ export const Favorite = ({ hero }: FavoriteProps) => {
             id="Guide"
             transform="translate(-231.000000, -828.000000)"
             fillRule="nonzero"
-            stroke={favorite ? "" : "#FF0000"}
-            fill={favorite ? "#FF0000" : ""}
+            stroke={isFavorite || showOnlyFavorites ? "" : "#FF0000"}
+            fill={isFavorite || showOnlyFavorites ? "#FF0000" : ""}
             strokeWidth="2"
           >
             <path

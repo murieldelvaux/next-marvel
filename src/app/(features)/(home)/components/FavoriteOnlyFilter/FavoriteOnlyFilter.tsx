@@ -4,7 +4,7 @@ import styles from "@/app/(features)/(home)/components/FavoriteOnlyFilter/favori
 export const FavoriteOnlyFilter = () => {
   return (
     <div className={styles.favoriteFilterContainer}>
-      <Favorite />
+      <Favorite variant="filterFavoriteOnly" />
       <p> Somente Favoritos</p>
     </div>
   );

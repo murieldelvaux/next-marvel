@@ -16,7 +16,8 @@ import { useFiltersListHerosStore } from "@/app/(features)/stores/useFiltersList
 
 export const HeroSearchList = () => {
   const { offset } = usePaginationStore();
-  const { orderByName, name } = useFiltersListHerosStore();
+  const { orderByName, name, showOnlyFavorites, favoriteHerosList } =
+    useFiltersListHerosStore();
   const {
     data: heros,
     isPending: isPendingHeros,
@@ -47,12 +48,24 @@ export const HeroSearchList = () => {
         <div className={styles.list}>
           {heros?.data.results &&
             heros?.data.results.length > 0 &&
+            !showOnlyFavorites &&
             heros.data.results.map((hero) => (
               <HeroCard
                 hero={hero}
                 image={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
                 key={hero.id}
                 href={`/${btoa(String(hero.id))}`}
+              />
+            ))}
+
+          {showOnlyFavorites &&
+            favoriteHerosList.length > 0 &&
+            favoriteHerosList.map((favoriteHeros) => (
+              <HeroCard
+                hero={favoriteHeros}
+                image={`${favoriteHeros.thumbnail.path}.${favoriteHeros.thumbnail.extension}`}
+                key={favoriteHeros.id}
+                href={`/${btoa(String(favoriteHeros.id))}`}
               />
             ))}
         </div>
