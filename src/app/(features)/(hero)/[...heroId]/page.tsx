@@ -6,6 +6,7 @@ export default function Hero() {
       style={{
         display: "flex",
         width: "100%",
+        minHeight: "100vh",
         backgroundColor: "#E7F6E7",
         flexDirection: "column",
       }}

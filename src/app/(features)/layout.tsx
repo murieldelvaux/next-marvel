@@ -11,6 +11,7 @@ export default function Layout({
         display: "flex",
         flexDirection: "column",
         width: "100%",
+        minHeight: "100vh",
         justifyContent: "space-between",
       }}
     >
