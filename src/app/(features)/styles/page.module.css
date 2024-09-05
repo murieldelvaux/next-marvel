@@ -1,4 +1,4 @@
-.content {
+.home {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -6,4 +6,12 @@
   padding: 30px;
   width: 100%;
   gap: 40px;
+}
+
+.hero {
+  display: "flex";
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #E7F6E7;
 }
