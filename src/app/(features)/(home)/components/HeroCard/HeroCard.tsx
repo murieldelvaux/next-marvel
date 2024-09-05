@@ -13,8 +13,6 @@ export const HeroCard = ({ image, href, hero }: HeroCardProps) => {
       <Link
         className={styles.imageWrapper}
         href={href ?? ""}
-        as={href}
-        prefetch
       >
         <div className={styles.image}>
           {image && (
