@@ -7,37 +7,32 @@ Este é um projeto front-end que consome a [API da marvel]([https://nextjs.org/]
 ├── app/
 │   ├── (features)/
 │   │   ├── (home)/
-│   │   │   ├── components/ (componentes específicos da feature home)
-│   │   │   ├── hooks/ (custom hooks para lógica de renderização da feature)
-│   │   │   ├── react-queries/ (hooks de integração com React Query)
-│   │   │   ├── requests/ (chamadas de API)
-│   │   │   ├── types/ (tipagens para as requisições)
-│   │   │   └── page.tsx (componente da página)
+│   │   │   ├── components/
+│   │   │   ├── hooks/ 
+│   │   │   ├── react-queries/ 
+│   │   │   ├── requests/
+│   │   │   ├── types/ 
 │   │   ├── (hero)/
-│   │   │   ├── components/ (componentes específicos da feature hero)
-│   │   │   ├── hooks/ (custom hooks para lógica de renderização da feature)
-│   │   │   ├── react-queries/ (hooks de integração com React Query para heróis)
-│   │   │   ├── requests/ (requisições de API)
-│   │   │   ├── types/ (tipagens para requisições de heróis)
-│   │   │   └── [...heroId]/ (página dinâmica para herói específico)
-│   ├── components/ (componentes compartilhados entre features)
-│   ├── icons/ (ícones usados na aplicação)
-│   ├── stores/ (gerenciamento de estado global com Zustand)
-│   ├── styles/ (módulos CSS para estilização das páginas)
-├── clients/
-│   └── marvelServiceFetch.ts (configuração de função centralizada para fazer requisições à API e tratar erros de forma padronizada)
+│   │   │   ├── components/
+│   │   │   ├── hooks/ 
+│   │   │   ├── react-queries/ 
+│   │   │   ├── requests/
+│   │   │   ├── types/ 
+│   │   │   └── [...heroId]/ 
+│   ├── components/
+│   ├── icons/ 
+│   ├── stores/
+│   ├── styles/
+├── clients/ 
 ├── lib/
-│   └── providers/
-│       ├── react-query/ (configuração do React Query)
-│       └── QueryClientProvider.tsx (configuração do client do React Query)
-├── utils/ (funções utilitárias)
+│   └── providers/│    
+├── utils/
 │   
 ├── tests/
-│   ├── config/ (configuração do React Testing Library)
-│   ├── mocks/ (respostas simuladas da API)
-│   ├── components/ (testes de componentes comuns)
-│   ├── features/ (testes específicos de features, seguindo a mesma estrutura da pasta app > (features))
-│   └── TestQueryWrapper.tsx (wrapper de testes com o provider do React Query)
+│   ├── config/ 
+│   ├── mocks/
+│   ├── components/ 
+│   ├── features/ 
 ```
 
 # Funcionalidades Principais
