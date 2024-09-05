@@ -15,6 +15,7 @@ export const HeroSearchList = () => {
   const {
     favoriteHerosList,
     heros,
+    name,
     isError,
     isPendingHeros,
     showOnlyFavorites,
@@ -51,14 +52,20 @@ export const HeroSearchList = () => {
 
           {showOnlyFavorites &&
             favoriteHerosList.length > 0 &&
-            favoriteHerosList.map((favoriteHeros) => (
-              <HeroCard
-                hero={favoriteHeros}
-                image={`${favoriteHeros.thumbnail.path}.${favoriteHeros.thumbnail.extension}`}
-                key={favoriteHeros.id}
-                href={`/${btoa(String(favoriteHeros.id))}`}
-              />
-            ))}
+            favoriteHerosList
+              .filter(
+                (favoriteHeros) =>
+                  !name ||
+                  favoriteHeros.name.toLowerCase().includes(name.toLowerCase())
+              )
+              .map((favoriteHeros) => (
+                <HeroCard
+                  hero={favoriteHeros}
+                  image={`${favoriteHeros.thumbnail.path}.${favoriteHeros.thumbnail.extension}`}
+                  key={favoriteHeros.id}
+                  href={`/${btoa(String(favoriteHeros.id))}`}
+                />
+              ))}
         </div>
 
         {isPendingHeros && <Loading />}

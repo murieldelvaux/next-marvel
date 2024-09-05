@@ -33,6 +33,7 @@ export const useHeroSearchList = () => {
   return {
     favoriteHerosList,
     heros,
+    name,
     isError,
     isPendingHeros,
     showOnlyFavorites,
