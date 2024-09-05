@@ -1,5 +1,5 @@
 # Marvel Search Heros
-Este é um projeto front-end que consome a [API da marvel]([https://nextjs.org/](https://developer.marvel.com/)) utilizando o framework [Next.js](https://nextjs.org/), basedo no React. O projeto foi desenvolvido pensando em uma experiência do usuário otimizada, através de boas prática de UX/UI, com foco na usabilidade, acessibilidade e responsividade. Além disso, foi utilizado o react-query para gestão de estados e uma arquitetura modularizada que facilita a manutenção e escalabilidade do código.
+Este é um projeto front-end que consome a [API da marvel]([https://nextjs.org/](https://developer.marvel.com/)) utilizando o framework [Next.js](https://nextjs.org/), baseado no React. O projeto foi desenvolvido pensando em uma experiência do usuário otimizada, através de boas prática de UX/UI, com foco na usabilidade, acessibilidade e responsividade. Além disso, foi utilizado o react-query para gestão de estados e uma arquitetura modularizada que facilita a manutenção e escalabilidade do código.
 
 ## Estrutura do projeto
 
