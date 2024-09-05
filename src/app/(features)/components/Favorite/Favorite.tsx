@@ -9,7 +9,7 @@ export const Favorite = ({ hero, variant, isFavorite }: FavoriteProps) => {
   return (
     <button
       className={styles.favorite}
-      data-testId={variant}
+      data-testid={variant}
       id={`${hero?.id}`}
       onClick={() => {
         handleClickToSelectAction({ hero, variant });
