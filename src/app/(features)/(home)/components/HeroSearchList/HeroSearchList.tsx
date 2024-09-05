@@ -3,30 +3,22 @@
 import { HeroCard } from "@/app/(features)/(home)/components/HeroCard/HeroCard";
 import styles from "@/app/(features)/(home)/components/HeroSearchList/hero-search-list.module.css";
 import { Search } from "@/app/(features)/components/Search/Search";
-import { useFindAllHerosPaginated } from "@/app/(features)/(home)/react-queries/useFindAllHerosPaginated";
 import { Pagination } from "@/app/(features)/components/Pagination/Pagination";
-import { usePaginationStore } from "@/app/(features)/stores/usePaginationStore";
 import { Loading } from "@/app/(features)/components/Loading/Loading";
 import { NotFoundResult } from "@/app/(features)/components/NotFound/NotFoundResult";
 import { OrderByNameSwitchFilter } from "@/app/(features)/(home)/components/OrderByNameSwitchFilter/OrderByNameSwitchFilter";
 import { FavoriteOnlyFilter } from "@/app/(features)/(home)/components/FavoriteOnlyFilter/FavoriteOnlyFilter";
 import { ErrorFeedback } from "@/app/(features)/components/ErrorFeedback/ErrorFeedback";
-import { useRouter } from "next/navigation";
-import { useFiltersListHerosStore } from "@/app/(features)/stores/useFiltersListStore";
+import { useHeroSearchList } from "@/app/(features)/(home)/hooks/useHeroSearchList";
 
 export const HeroSearchList = () => {
-  const { offset } = usePaginationStore();
-  const { orderByName, name } = useFiltersListHerosStore();
   const {
-    data: heros,
-    isPending: isPendingHeros,
+    favoriteHerosList,
+    heros,
     isError,
-  } = useFindAllHerosPaginated({
-    limit: 16,
-    offset,
-    name,
-    orderBy: orderByName ? "name" : "-name",
-  });
+    isPendingHeros,
+    showOnlyFavorites,
+  } = useHeroSearchList();
 
   return (
     <div className={styles.searchList}>
@@ -47,12 +39,24 @@ export const HeroSearchList = () => {
         <div className={styles.list}>
           {heros?.data.results &&
             heros?.data.results.length > 0 &&
+            !showOnlyFavorites &&
             heros.data.results.map((hero) => (
               <HeroCard
                 hero={hero}
                 image={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
                 key={hero.id}
                 href={`/${btoa(String(hero.id))}`}
+              />
+            ))}
+
+          {showOnlyFavorites &&
+            favoriteHerosList.length > 0 &&
+            favoriteHerosList.map((favoriteHeros) => (
+              <HeroCard
+                hero={favoriteHeros}
+                image={`${favoriteHeros.thumbnail.path}.${favoriteHeros.thumbnail.extension}`}
+                key={favoriteHeros.id}
+                href={`/${btoa(String(favoriteHeros.id))}`}
               />
             ))}
         </div>

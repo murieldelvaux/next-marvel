@@ -1,11 +1,14 @@
 import { HerosResults } from "@/app/(features)/(home)/types/findAllHerosPaginated.types";
+import { FavoriteProps } from "@/app/(features)/components/Favorite/Favorite.types";
 import { useFiltersListHerosStore } from "@/app/(features)/stores/useFiltersListStore";
-import { useState } from "react";
 
 export const useFavoriteHero = () => {
-  const [favorite, setFavorite] = useState(false);
-  const { favoriteHerosList, setFavoriteHerosList } =
-    useFiltersListHerosStore();
+  const {
+    favoriteHerosList,
+    setFavoriteHerosList,
+    setShowOnlyFavorites,
+    showOnlyFavorites,
+  } = useFiltersListHerosStore();
 
   const handleUpdateFavoriteList = (newHero: HerosResults) => {
     const favoriteList = favoriteHerosList;
@@ -16,7 +19,11 @@ export const useFavoriteHero = () => {
     if (favoriteHerosList.length < 5 && !heroAlreadyIsFavorite) {
       favoriteList.push(newHero);
 
-      setFavorite(true);
+      localStorage.setItem(
+        "favoriteHeroList",
+        JSON.stringify(favoriteHerosList)
+      );
+
       setFavoriteHerosList([...favoriteList]);
     }
 
@@ -24,15 +31,31 @@ export const useFavoriteHero = () => {
       const unfavoritedHeroIndex = favoriteHerosList.findIndex(
         (hero) => hero.id === newHero.id
       );
+
       favoriteList.splice(unfavoritedHeroIndex, 1);
-      setFavorite(false);
+
+      localStorage.setItem(
+        "favoriteHeroList",
+        JSON.stringify(favoriteHerosList)
+      );
+
+      setFavoriteHerosList([...favoriteList]);
+    }
+  };
+
+  const handleClickToSelectAction = ({ hero, variant }: FavoriteProps) => {
+    if (hero && variant === "favorite") handleUpdateFavoriteList(hero);
+
+    if (variant === "filterFavoriteOnly") {
+      setShowOnlyFavorites(!showOnlyFavorites);
     }
   };
 
   return {
-    favorite,
-    setFavorite,
-    handleUpdateFavoriteList,
     favoriteHerosList,
+    showOnlyFavorites,
+    handleUpdateFavoriteList,
+    handleClickToSelectAction,
+    setShowOnlyFavorites,
   };
 };

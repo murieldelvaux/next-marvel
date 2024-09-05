@@ -5,10 +5,13 @@ import { Favorite } from "@/app/(features)/components/Favorite/Favorite";
 import { Loading } from "@/app/(features)/components/Loading/Loading";
 import { ComicsIcon } from "@/app/(features)/icons/ComicsIcon/ComicsIcon";
 import { TrailersIcon } from "@/app/(features)/icons/TrailersIcon/TrailersIcon";
+import { useFiltersListHerosStore } from "@/app/(features)/stores/useFiltersListStore";
 import Image from "next/image";
 import "react";
 
 export const HeroDetail = ({ profile, lastComic, rating }: HeroDetailProps) => {
+  const { favoriteHerosList } = useFiltersListHerosStore();
+
   return (
     <div className={styles.detailContainer}>
       {profile && (
@@ -20,7 +23,13 @@ export const HeroDetail = ({ profile, lastComic, rating }: HeroDetailProps) => {
           <div className={styles.detail}>
             <div className={styles.heroNameSection}>
               <h1 className={styles.heroName}>{profile?.name}</h1>
-              <Favorite />
+              <Favorite
+                variant="favorite"
+                hero={profile}
+                isFavorite={favoriteHerosList.some(
+                  (favoriteHero) => favoriteHero.id === profile.id
+                )}
+              />
             </div>
 
             <p className={styles.heroDescription}>
@@ -57,9 +66,9 @@ export const HeroDetail = ({ profile, lastComic, rating }: HeroDetailProps) => {
                 <div className={styles.rating}>
                   {Array.from({ length: 5 }, (_, i) =>
                     rating > i ? (
-                      <Rating status="on" />
+                      <Rating status="on" key={i} />
                     ) : (
-                      <Rating status="off" />
+                      <Rating status="off" key={i} />
                     )
                   )}
                 </div>

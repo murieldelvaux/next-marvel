@@ -2,10 +2,10 @@
 import { marvelServiceFetch } from "@/app/clients/marvelServiceFetch";
 
 import { FindHeroProfileRequest } from "@/app/(features)/(hero)/[...heroId]/types/findHeroProfile.types";
-import { FindAHeroComicsResponse } from "@/app/(features)/(hero)/[...heroId]/types/findHeroComics.types";
+import { FindHeroComicsResponse } from "@/app/(features)/(hero)/[...heroId]/types/findHeroComics.types";
 
 export const findHeroComics = async ({ heroId }: FindHeroProfileRequest) => {
-  const comics = await marvelServiceFetch<FindAHeroComicsResponse>(
+  const comics = await marvelServiceFetch<FindHeroComicsResponse>(
     `characters/${heroId}/comics?orderBy=-onsaleDate`,
     {
       method: "GET",

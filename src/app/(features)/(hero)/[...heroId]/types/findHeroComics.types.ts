@@ -25,7 +25,7 @@ type FindHeroComicsData = {
   total: number;
 };
 
-export type FindAHeroComicsResponse = {
+export type FindHeroComicsResponse = {
   attributionHTML?: string;
   attributionText?: string;
   code?: number;

@@ -2,4 +2,6 @@ import { HerosResults } from "@/app/(features)/(home)/types/findAllHerosPaginate
 
 export type FavoriteProps = {
   hero?: HerosResults;
+  variant: "favorite" | "filterFavoriteOnly";
+  isFavorite?: boolean;
 };

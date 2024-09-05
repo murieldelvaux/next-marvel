@@ -15,6 +15,7 @@ export const HeroProfile = () => {
       <ProfileHeader />
 
       <HeroDetail
+        key={profile?.data.results[0].id}
         profile={profile?.data.results[0]}
         lastComic={
           comics?.data && comics.data.total > 0
