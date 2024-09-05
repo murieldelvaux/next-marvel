@@ -44,7 +44,7 @@ Este é um projeto front-end que consome a [API da marvel]([https://nextjs.org/]
 - Listagem de heróis da Marvel utilizando a API pública.
 - Paginação para navegação entre resultados.
 - Ordenação alfabética de heróis de A-Z ou de Z-A.
-- Seleção de até 5 heróis favoritos.
+- Seleção de até 5 heróis favoritos com persistência dos dados.
 - Filtragem de heróis favoritos.
 - Filtro de pesquisa pelo nome do herói.
 - Visualização de detalhes de heróis e seus quadrinhos através de uma página com rota dinâmica.
