@@ -1,8 +1,9 @@
 # Marvel Search Heros
 Este é um projeto front-end que consome a [API da marvel]([https://nextjs.org/](https://developer.marvel.com/)) utilizando o framework [Next.js](https://nextjs.org/), basedo no React. O projeto foi desenvolvido pensando em uma experiência do usuário otimizada, através de boas prática de UX/UI, com foco na usabilidade, acessibilidade e responsividade. Além disso, foi utilizado o react-query para gestão de estados e uma arquitetura modularizada que facilita a manutenção e escalabilidade do código.
 
-## Estrutura 
+## Estrutura do projeto
 
+```
 ├── app/
 │   ├── (features)/
 │   │   ├── (home)/
@@ -37,6 +38,7 @@ Este é um projeto front-end que consome a [API da marvel]([https://nextjs.org/]
 │   ├── components/ (testes de componentes comuns)
 │   ├── features/ (testes específicos de features, seguindo a mesma estrutura da pasta app > (features))
 │   └── TestQueryWrapper.tsx (wrapper de testes com o provider do React Query)
+```
 
 # Funcionalidades Principais
 - Listagem de heróis da Marvel utilizando a API pública.
