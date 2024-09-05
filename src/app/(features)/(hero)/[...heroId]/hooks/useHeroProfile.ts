@@ -2,7 +2,7 @@ import { useFindHeroComics } from "@/app/(features)/(hero)/[...heroId]/react-que
 import { useFindHeroProfile } from "@/app/(features)/(hero)/[...heroId]/react-queries/useFindHeroProfile";
 import { formatDate } from "@/app/utils/formatDate";
 import { useParams, useRouter } from "next/navigation";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 
 export const useHeroProfile = () => {
   const router = useRouter();
@@ -15,7 +15,7 @@ export const useHeroProfile = () => {
   const { data: profile, isPending: isPendingHero } = useFindHeroProfile({
     heroId: Number(decryptId),
   });
-  const { data: comics, isPending: isPendingComics } = useFindHeroComics({
+  const { data: comics } = useFindHeroComics({
     heroId: Number(decryptId),
   });
 

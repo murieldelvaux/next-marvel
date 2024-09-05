@@ -9,7 +9,7 @@ import { LatestComicReleases } from "@/app/(features)/(hero)/[...heroId]/compone
 
 export const HeroProfile = () => {
   const { profile, comics, lastComicDate, getRating } = useHeroProfile();
-  
+
   return (
     <div className={styles.profileContainer}>
       <ProfileHeader />

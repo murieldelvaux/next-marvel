@@ -1,7 +1,5 @@
 import { type QueryFnOptions } from "@/app/lib/react-query/react-query";
 import { useQuery } from "@tanstack/react-query";
-import { findHeroProfile } from "@/app/(features)/(hero)/[...heroId]/requests/findHeroProfile";
-import { FindHeroProfileResponse } from "@/app/(features)/(hero)/[...heroId]/types/findHeroProfile.types";
 import { findHeroComics } from "@/app/(features)/(hero)/[...heroId]/requests/findHeroComics";
 import { FindHeroComicsResponse } from "@/app/(features)/(hero)/[...heroId]/types/findHeroComics.types";
 
