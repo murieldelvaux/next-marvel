@@ -1,10 +1,8 @@
 import { HerosResults } from "@/app/(features)/(home)/types/findAllHerosPaginated.types";
 import { FavoriteProps } from "@/app/(features)/components/Favorite/Favorite.types";
 import { useFiltersListHerosStore } from "@/app/(features)/stores/useFiltersListStore";
-import { useState } from "react";
 
 export const useFavoriteHero = () => {
-  const [favorite, setFavorite] = useState(false);
   const {
     favoriteHerosList,
     setFavoriteHerosList,
@@ -20,6 +18,7 @@ export const useFavoriteHero = () => {
 
     if (favoriteHerosList.length < 5 && !heroAlreadyIsFavorite) {
       favoriteList.push(newHero);
+
       localStorage.setItem(
         "favoriteHeroList",
         JSON.stringify(favoriteHerosList)
@@ -32,7 +31,9 @@ export const useFavoriteHero = () => {
       const unfavoritedHeroIndex = favoriteHerosList.findIndex(
         (hero) => hero.id === newHero.id
       );
+
       favoriteList.splice(unfavoritedHeroIndex, 1);
+
       localStorage.setItem(
         "favoriteHeroList",
         JSON.stringify(favoriteHerosList)
