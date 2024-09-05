@@ -63,7 +63,7 @@ Este é um projeto front-end que consome a [API da marvel]([https://nextjs.org/]
 ## Como iniciar
 
 Primeiro, inicie o servidor de desenvolvimento:
-
+```
 bash
 npm run dev
 # ou
@@ -72,7 +72,7 @@ yarn dev
 pnpm dev
 # ou
 bun dev
-
+```
 Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
 
 Você pode começar a editar a página modificando `app/page.tsx`. A página será atualizada automaticamente conforme você edita o arquivo.
