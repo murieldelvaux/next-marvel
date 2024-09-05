@@ -22,7 +22,7 @@ export const Pagination = ({ limit, currentPage, total }: PaginationProps) => {
         placeholder="0"
         type="number"
         className={styles.input}
-        defaultValue={currentPage}
+        defaultValue={offset}
         onChange={(e) => setOffset(Number(e.target.value))}
       />
 
