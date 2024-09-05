@@ -10,7 +10,12 @@ export const HeroCard = ({ image, href, hero }: HeroCardProps) => {
 
   return (
     <div className={styles.cardContent}>
-      <Link className={styles.imageWrapper} href={href ?? ""}>
+      <Link
+        className={styles.imageWrapper}
+        href={href ?? ""}
+        as={href}
+        prefetch
+      >
         <div className={styles.image}>
           {image && (
             <Image
@@ -19,7 +24,6 @@ export const HeroCard = ({ image, href, hero }: HeroCardProps) => {
               fill
               className={styles.image}
               sizes="(max-width: 204px)"
-              priority
             />
           )}
         </div>
