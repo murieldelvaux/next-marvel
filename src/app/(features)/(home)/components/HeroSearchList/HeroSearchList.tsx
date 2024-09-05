@@ -72,7 +72,6 @@ export const HeroSearchList = () => {
         <Pagination
           limit={heros?.data.limit ?? 15}
           total={heros?.data.total ?? 0}
-          currentPage={heros?.data.offset}
         />
       </div>
     </div>

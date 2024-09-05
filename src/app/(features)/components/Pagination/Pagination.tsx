@@ -3,7 +3,7 @@ import styles from "@/app/(features)/components/Pagination/pagination.module.css
 import { PaginationProps } from "@/app/(features)/components/Pagination/Pagination.types";
 import { usePaginationStore } from "@/app/(features)/stores/usePaginationStore";
 
-export const Pagination = ({ limit, currentPage, total }: PaginationProps) => {
+export const Pagination = ({ limit, total }: PaginationProps) => {
   const { setOffset, offset } = usePaginationStore();
   const totalPages = Math.floor(total / limit);
 
